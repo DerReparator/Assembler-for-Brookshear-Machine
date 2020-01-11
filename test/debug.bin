@@ -1,0 +1,5 @@
+; Das ist ein Kommentar
+	LOAD 2, FF ; Das sollte gehen
+	MOVE 4,0
+	ROTATE-RIGHT 1,3
+	HALT
