@@ -1,5 +1,6 @@
-; Das ist ein Kommentar
-	LOAD 2, FF ; Das sollte gehen
+; This is a comment
+	LOAD 2, FF ; Should compile
 	MOVE 4,0
+	HALT PLEASE ; Should fail
 	ROTATE-RIGHT 1,3
 	HALT
