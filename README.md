@@ -35,7 +35,7 @@ differently.
 | 0xB | RXY      |    JUMP to Addr. XY if content of Reg. R equals content of Reg. 0 |
 | 0xC | 000     |    Halt program execution |
 
-## Assembly Instructions
+### Assembly Instructions
 
 | OpCode        | Operands           | Assembler Notation  |
 | ------------- |:-------------:| -----:|
@@ -51,6 +51,10 @@ differently.
 | 0xA | R0X      |    ROTATE-RIGHT R, X |
 | 0xB | RXY      |    JUMP XY, R |
 | 0xC | 000     |    HALT |
+
+### Further Hints
+
+1. A comment begins with a semicolon ';' and includes all of the remaining line
 
 ## To-Do
 
