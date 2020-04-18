@@ -5,6 +5,7 @@ Machine. http://joeledstrom.github.io/brookshear-emu/
 '''
 from enum import Enum
 from typing import List, Tuple
+import sys
 	
 class OpType(Enum):
 	'''The type of the operand's parameter'''
@@ -155,7 +156,13 @@ class Assembler:
 		return machine_code
 
 if __name__ == '__main__':
-	with open("../test/debug.bin", "r") as f:
+	source_file = None
+	if len(sys.argv) <= 1:
+		source_file = "../test/debug.bin"
+	else:
+		source_file = sys.argv[1]
+	print(f"[INFO] I will assemble {source_file}")
+	with open(source_file, "r") as f:
 		ass = Assembler(f.read())
 		print("Translate: " + ass.translate())
 		print("URL:")

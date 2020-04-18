@@ -20,29 +20,29 @@ Python implementation follows the following instruction set.
 All values are handled in two's complement representation unless stated
 differently.
 
-| OpCode        | Operands           | Description  |
-| ------------- |:-------------:| -----:|
-| 1     | RXY | Load Byte from Addr. XY into Reg. R |
-| 2     | RXY      |   Load value XY into Reg. R |
-| 3 | RXY      |    Store content of Reg. R into Addr. XY |
-| 4 | 0RS      |    Move content of Reg. R into Reg. S |
-| 5 | RST      |    Add contents of Reg. S and Reg. T and store result in Reg. R |
-| 6 | RST      |    Add contents of Reg. S and Reg. T and store result in Reg. R (values in IEEE 754 8-bit FP format)|
-| 7 | RST     |    OR contents of Reg. S and Reg. T and store result in Reg. R |
-| 8 | RST      |    AND contents of Reg. S and Reg. T and store result in Reg. R |
-| 9 | RST      |    XOR contents of Reg. S and Reg. T and store result in Reg. R |
-| 0xA | R0X      |    Rotate content of Reg. R to the right by X places |
-| 0xB | RXY      |    JUMP to Addr. XY if content of Reg. R equals content of Reg. 0 |
-| 0xC | 000     |    Halt program execution |
+| OpCode        | Operands           | Description  | Assembler Notation  |
+| ------------- |:-------------:| -----:|-----:|
+| 1     | RXY | Load Byte from Addr. XY into Reg. R  | LOAD R, XY |
+| 2     | RXY      |   Load value XY into Reg. R |  LOADI R, XY |
+| 3 | RXY      |    Store content of Reg. R into Addr. XY | STORE XY, R |
+| 4 | 0RS      |    Move content of Reg. R into Reg. S |MOVE S, R | 
+| 5 | RST      |    Add contents of Reg. S and Reg. T and store result in Reg. R |  ADD R, S, T |
+| 6 | RST      |    Add contents of Reg. S and Reg. T and store result in Reg. R (values in IEEE 754 8-bit FP format)| ADD-FLOAT R, S, T |
+| 7 | RST     |    OR contents of Reg. S and Reg. T and store result in Reg. R | OR R, S ,T |
+| 8 | RST      |    AND contents of Reg. S and Reg. T and store result in Reg. R | AND R, S, T |
+| 9 | RST      |    XOR contents of Reg. S and Reg. T and store result in Reg. R | XOR R, S, T |
+| 0xA | R0X      |    Rotate content of Reg. R to the right by X places | ROTATE-RIGHT R, X |
+| 0xB | RXY      |    JUMP to Addr. XY if content of Reg. R equals content of Reg. 0 | JUMP XY, R |
+| 0xC | 000     |    Halt program execution | HALT |
 
-### Assembly Instructions
+<!-- ### Assembly Instructions
 
 | OpCode        | Operands           | Assembler Notation  |
 | ------------- |:-------------:| -----:|
-| 1     | RXY | LOAD R, XY |
+| 1     | RXY | MOVE S, R |
 | 2     | RXY      |  LOADI R, XY |
 | 3 | RXY      |    STORE XY, R |
-| 4 | 0RS      |    MOVE S, R |
+| 4 | 0RS      |    
 | 5 | RST      |    ADD R, S, T |
 | 6 | RST      |    ADD-FLOAT R, S, T |
 | 7 | RST     |    OR R, S ,T |
@@ -50,11 +50,11 @@ differently.
 | 9 | RST      |    XOR R, S, T |
 | 0xA | R0X      |    ROTATE-RIGHT R, X |
 | 0xB | RXY      |    JUMP XY, R |
-| 0xC | 000     |    HALT |
+| 0xC | 000     |    HALT | -->
 
 ### Further Hints
 
-1. A comment begins with a semicolon ';' and includes all of the remaining line
+- [ ] A comment begins with a semicolon ';' and includes all of the remaining line
 
 ## To-Do
 

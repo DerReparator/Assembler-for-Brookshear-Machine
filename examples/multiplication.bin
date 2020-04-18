@@ -1,0 +1,21 @@
+; A program for multiplying to integers together.
+; Kept very simple - result must not be out of signed 8-bit range [-128  127]
+
+; Factor A is at Addr.		0x20
+; Factor B is at Addr.		0x21
+; Result will be at Addr.	0x22
+
+LOAD 1, 22	; 11 22
+LOAD 2, 20	; 12 20
+LOAD 3, 21	; 13 21
+LOADI 4, FF	; 24 FF
+
+JUMP 10, 3	; B3 10
+ADD 1, 1, 2	; 51 12
+ADD 3, 3, 4	; 
+; unconditional Jump
+JUMP 8, 0	; B0 08
+STORE 22, 1	; 31 22
+HALT		; C0 00
+
+
